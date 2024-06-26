@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+int main() {
+    unsigned count=11;
+    int total=0;
+    int i, flag=0;
+    char hex[5];
+
+for (count;count<=100000;count++){
+    flag=0;
+    sprintf(hex, "%x", count);
+    if (hex[0] == 'b' ){
+        for (i = 2; i <= count / 2; i++) {
+            if (count % i == 0) {
+                flag=1;
+            }
+        }   
+        if (flag == 0) {
+           total++;
+          }
+        }
+    }
+    printf("Total numbers is %i", total);
+}
